@@ -1,0 +1,272 @@
+10 Feb 2025 10:51:38,549 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:51:38,552 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1117)  - Added sinks: fileSink Agent: agent2
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:51:38,553 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:51:38,554 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:51:38,554 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateConfigFilterSet:623)  - Agent configuration for 'agent2' has no configfilters.
+10 Feb 2025 10:51:38,568 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateSinks:884)  - Could not configure sink  fileSink due to: Component has no type. Cannot configure. fileSink
+org.apache.flume.conf.ConfigurationException: Component has no type. Cannot configure. fileSink
+	at org.apache.flume.conf.ComponentConfiguration.configure(ComponentConfiguration.java:76) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.sink.SinkConfiguration.configure(SinkConfiguration.java:44) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateSinks(FlumeConfiguration.java:867) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.isValid(FlumeConfiguration.java:383) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.access$000(FlumeConfiguration.java:228) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.FlumeConfiguration.validateConfiguration(FlumeConfiguration.java:153) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.conf.FlumeConfiguration.<init>(FlumeConfiguration.java:133) ~[flume-ng-configuration-1.11.0.jar:1.11.0]
+	at org.apache.flume.node.UriConfigurationProvider.getFlumeConfiguration(UriConfigurationProvider.java:310) ~[flume-ng-node-1.11.0.jar:1.11.0]
+	at org.apache.flume.node.AbstractConfigurationProvider.getConfiguration(AbstractConfigurationProvider.java:100) ~[flume-ng-node-1.11.0.jar:1.11.0]
+	at org.apache.flume.node.Application.main(Application.java:491) ~[flume-ng-node-1.11.0.jar:1.11.0]
+10 Feb 2025 10:51:38,578 INFO  [main] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:163)  - Post-validation flume configuration contains configuration for agents: [agent2]
+10 Feb 2025 10:51:38,579 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:154)  - Creating channels
+10 Feb 2025 10:51:38,582 INFO  [main] (org.apache.flume.channel.DefaultChannelFactory.create:42)  - Creating instance of channel memChannel type memory
+10 Feb 2025 10:51:38,586 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:208)  - Created channel memChannel
+10 Feb 2025 10:51:38,586 INFO  [main] (org.apache.flume.source.DefaultSourceFactory.create:41)  - Creating instance of source dirSrc, type spoolDir
+10 Feb 2025 10:51:38,600 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:123)  - Channel memChannel connected to [dirSrc]
+10 Feb 2025 10:51:38,600 INFO  [main] (org.apache.flume.node.Application.initializeAllComponents:177)  - Initializing components
+10 Feb 2025 10:51:38,603 INFO  [main] (org.apache.flume.node.Application.startAllComponents:207)  - Starting new configuration:{ sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 10:51:38,604 INFO  [main] (org.apache.flume.node.Application.startAllComponents:214)  - Starting Channel memChannel
+10 Feb 2025 10:51:38,605 INFO  [main] (org.apache.flume.node.Application.startAllComponents:229)  - Waiting for channel: memChannel to start. Sleeping for 500 ms
+10 Feb 2025 10:51:38,607 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: CHANNEL, name: memChannel: Successfully registered new MBean.
+10 Feb 2025 10:51:38,608 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: CHANNEL, name: memChannel started
+10 Feb 2025 10:51:39,107 INFO  [main] (org.apache.flume.node.Application.startAllComponents:252)  - Starting Source dirSrc
+10 Feb 2025 10:51:39,110 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.SpoolDirectorySource.start:85)  - SpoolDirectorySource source starting with directory: /home/hadoop/Flume/TransferSpool/spool
+10 Feb 2025 10:51:39,124 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SOURCE, name: dirSrc: Successfully registered new MBean.
+10 Feb 2025 10:51:39,124 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SOURCE, name: dirSrc started
+10 Feb 2025 10:52:30,844 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.readEvents:407)  - Last read took us just up to a file boundary. Rolling to the next file, if there is one.
+10 Feb 2025 10:52:30,844 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.rollCurrentFile:520)  - Preparing to move file /home/hadoop/Flume/TransferSpool/spool/data.txt to /home/hadoop/Flume/TransferSpool/spool/data.txt.COMPLETED
+10 Feb 2025 10:55:38,585 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.readEvents:407)  - Last read took us just up to a file boundary. Rolling to the next file, if there is one.
+10 Feb 2025 10:55:38,586 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.rollCurrentFile:520)  - Preparing to move file /home/hadoop/Flume/TransferSpool/spool/hello.txt to /home/hadoop/Flume/TransferSpool/spool/hello.txt.COMPLETED
+10 Feb 2025 10:56:12,274 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:140)  - Shutting down configuration: { sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 10:56:12,275 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:144)  - Stopping Source dirSrc
+10 Feb 2025 10:56:12,276 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }
+10 Feb 2025 10:56:12,277 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SOURCE, name: dirSrc stopped
+10 Feb 2025 10:56:12,278 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.start.time == 1739159499124
+10 Feb 2025 10:56:12,278 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.stop.time == 1739159772277
+10 Feb 2025 10:56:12,279 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.accepted == 2
+10 Feb 2025 10:56:12,279 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.received == 2
+10 Feb 2025 10:56:12,279 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.accepted == 0
+10 Feb 2025 10:56:12,280 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.received == 0
+10 Feb 2025 10:56:12,280 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.channel.write.fail == 0
+10 Feb 2025 10:56:12,280 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.event.read.fail == 0
+10 Feb 2025 10:56:12,281 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.accepted == 2
+10 Feb 2025 10:56:12,281 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.received == 2
+10 Feb 2025 10:56:12,281 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.generic.processing.fail == 0
+10 Feb 2025 10:56:12,282 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.open-connection.count == 0
+10 Feb 2025 10:56:12,282 INFO  [agent-shutdown-hook] (org.apache.flume.source.SpoolDirectorySource.stop:138)  - SpoolDir source dirSrc stopped. Metrics: SOURCE:dirSrc{src.events.accepted=2, src.open-connection.count=0, src.append.received=0, src.channel.write.fail=0, src.append-batch.received=2, src.generic.processing.fail=0, src.append-batch.accepted=2, src.append.accepted=0, src.events.received=2, src.event.read.fail=0}
+10 Feb 2025 10:56:12,283 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:164)  - Stopping Channel memChannel
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: org.apache.flume.channel.MemoryChannel{name: memChannel}
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: CHANNEL, name: memChannel stopped
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.start.time == 1739159498608
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.stop.time == 1739159772284
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.capacity == 100
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.current.size == 2
+10 Feb 2025 10:56:12,284 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.attempt == 2
+10 Feb 2025 10:56:12,285 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.success == 2
+10 Feb 2025 10:56:12,285 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.attempt == 0
+10 Feb 2025 10:56:12,285 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.success == 0
+10 Feb 2025 10:56:12,285 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 27
+10 Feb 2025 10:58:43,817 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:58:43,819 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1117)  - Added sinks: fileSink Agent: agent2
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:58:43,820 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:58:43,821 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:58:43,821 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:58:43,821 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateConfigFilterSet:623)  - Agent configuration for 'agent2' has no configfilters.
+10 Feb 2025 10:58:43,833 INFO  [main] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:163)  - Post-validation flume configuration contains configuration for agents: [agent2]
+10 Feb 2025 10:58:43,834 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:154)  - Creating channels
+10 Feb 2025 10:58:43,839 INFO  [main] (org.apache.flume.channel.DefaultChannelFactory.create:42)  - Creating instance of channel memChannel type memory
+10 Feb 2025 10:58:43,843 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:208)  - Created channel memChannel
+10 Feb 2025 10:58:43,844 INFO  [main] (org.apache.flume.source.DefaultSourceFactory.create:41)  - Creating instance of source dirSrc, type spoolDir
+10 Feb 2025 10:58:43,859 INFO  [main] (org.apache.flume.sink.DefaultSinkFactory.create:42)  - Creating instance of sink: fileSink, type: file_roll
+10 Feb 2025 10:58:43,863 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:123)  - Channel memChannel connected to [dirSrc, fileSink]
+10 Feb 2025 10:58:43,863 INFO  [main] (org.apache.flume.node.Application.initializeAllComponents:177)  - Initializing components
+10 Feb 2025 10:58:43,867 INFO  [main] (org.apache.flume.node.Application.startAllComponents:207)  - Starting new configuration:{ sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{fileSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{} } }} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 10:58:43,867 INFO  [main] (org.apache.flume.node.Application.startAllComponents:214)  - Starting Channel memChannel
+10 Feb 2025 10:58:43,869 INFO  [main] (org.apache.flume.node.Application.startAllComponents:229)  - Waiting for channel: memChannel to start. Sleeping for 500 ms
+10 Feb 2025 10:58:43,872 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: CHANNEL, name: memChannel: Successfully registered new MBean.
+10 Feb 2025 10:58:43,872 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: CHANNEL, name: memChannel started
+10 Feb 2025 10:58:44,370 INFO  [main] (org.apache.flume.node.Application.startAllComponents:241)  - Starting Sink fileSink
+10 Feb 2025 10:58:44,372 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:111)  - Starting org.apache.flume.sink.RollingFileSink{name:fileSink, channel:memChannel}...
+10 Feb 2025 10:58:44,372 INFO  [main] (org.apache.flume.node.Application.startAllComponents:252)  - Starting Source dirSrc
+10 Feb 2025 10:58:44,374 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.source.SpoolDirectorySource.start:85)  - SpoolDirectorySource source starting with directory: /home/hadoop/Flume/TransferSpool/spool
+10 Feb 2025 10:58:44,374 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SINK, name: fileSink: Successfully registered new MBean.
+10 Feb 2025 10:58:44,374 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SINK, name: fileSink started
+10 Feb 2025 10:58:44,375 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:141)  - RollInterval is not valid, file rolling will not happen.
+10 Feb 2025 10:58:44,376 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:143)  - RollingFileSink fileSink started.
+10 Feb 2025 10:58:44,394 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SOURCE, name: dirSrc: Successfully registered new MBean.
+10 Feb 2025 10:58:44,378 ERROR [SinkRunner-PollingRunner-DefaultSinkProcessor] (org.apache.flume.SinkRunner$PollingRunner.run:158)  - Unable to deliver event. Exception follows.
+org.apache.flume.EventDeliveryException: Failed to open file /home/hadoop/Flume/TransferSpool/out/1739159923862-1 while delivering event
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:185) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.sink.DefaultSinkProcessor.process(DefaultSinkProcessor.java:39) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.SinkRunner$PollingRunner.run(SinkRunner.java:145) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: java.io.FileNotFoundException: /home/hadoop/Flume/TransferSpool/out/1739159923862-1 (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:?]
+	at java.io.FileOutputStream.open(FileOutputStream.java:298) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:237) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:187) ~[?:?]
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:176) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	... 3 more
+10 Feb 2025 10:58:44,395 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SOURCE, name: dirSrc started
+10 Feb 2025 10:58:49,395 ERROR [SinkRunner-PollingRunner-DefaultSinkProcessor] (org.apache.flume.SinkRunner$PollingRunner.run:158)  - Unable to deliver event. Exception follows.
+org.apache.flume.EventDeliveryException: Failed to open file /home/hadoop/Flume/TransferSpool/out/1739159923862-1 while delivering event
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:185) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.sink.DefaultSinkProcessor.process(DefaultSinkProcessor.java:39) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.SinkRunner$PollingRunner.run(SinkRunner.java:145) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: java.io.FileNotFoundException: /home/hadoop/Flume/TransferSpool/out/1739159923862-1 (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:?]
+	at java.io.FileOutputStream.open(FileOutputStream.java:298) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:237) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:187) ~[?:?]
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:176) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	... 3 more
+10 Feb 2025 10:58:54,397 ERROR [SinkRunner-PollingRunner-DefaultSinkProcessor] (org.apache.flume.SinkRunner$PollingRunner.run:158)  - Unable to deliver event. Exception follows.
+org.apache.flume.EventDeliveryException: Failed to open file /home/hadoop/Flume/TransferSpool/out/1739159923862-1 while delivering event
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:185) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.sink.DefaultSinkProcessor.process(DefaultSinkProcessor.java:39) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at org.apache.flume.SinkRunner$PollingRunner.run(SinkRunner.java:145) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+Caused by: java.io.FileNotFoundException: /home/hadoop/Flume/TransferSpool/out/1739159923862-1 (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:?]
+	at java.io.FileOutputStream.open(FileOutputStream.java:298) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:237) ~[?:?]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:187) ~[?:?]
+	at org.apache.flume.sink.RollingFileSink.process(RollingFileSink.java:176) ~[flume-ng-core-1.11.0.jar:1.11.0]
+	... 3 more
+10 Feb 2025 10:58:55,673 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:140)  - Shutting down configuration: { sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{fileSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{runner.deliveryErrors=3} } }} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 10:58:55,674 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:144)  - Stopping Source dirSrc
+10 Feb 2025 10:58:55,674 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }
+10 Feb 2025 10:58:55,676 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SOURCE, name: dirSrc stopped
+10 Feb 2025 10:58:55,676 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.start.time == 1739159924395
+10 Feb 2025 10:58:55,676 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.stop.time == 1739159935676
+10 Feb 2025 10:58:55,677 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.accepted == 0
+10 Feb 2025 10:58:55,678 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.received == 0
+10 Feb 2025 10:58:55,678 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.accepted == 0
+10 Feb 2025 10:58:55,678 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.received == 0
+10 Feb 2025 10:58:55,679 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.channel.write.fail == 0
+10 Feb 2025 10:58:55,679 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.event.read.fail == 0
+10 Feb 2025 10:58:55,679 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.accepted == 0
+10 Feb 2025 10:58:55,680 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.received == 0
+10 Feb 2025 10:58:55,680 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.generic.processing.fail == 0
+10 Feb 2025 10:58:55,680 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.open-connection.count == 0
+10 Feb 2025 10:58:55,681 INFO  [agent-shutdown-hook] (org.apache.flume.source.SpoolDirectorySource.stop:138)  - SpoolDir source dirSrc stopped. Metrics: SOURCE:dirSrc{src.events.accepted=0, src.open-connection.count=0, src.append.received=0, src.channel.write.fail=0, src.append-batch.received=0, src.generic.processing.fail=0, src.append-batch.accepted=0, src.append.accepted=0, src.events.received=0, src.event.read.fail=0}
+10 Feb 2025 10:58:55,681 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:154)  - Stopping Sink fileSink
+10 Feb 2025 10:58:55,681 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{runner.deliveryErrors=3} } }
+10 Feb 2025 10:58:55,683 INFO  [agent-shutdown-hook] (org.apache.flume.sink.RollingFileSink.stop:236)  - RollingFile sink fileSink stopping...
+10 Feb 2025 10:58:55,683 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SINK, name: fileSink stopped
+10 Feb 2025 10:58:55,684 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SINK, name: fileSink. sink.start.time == 1739159924374
+10 Feb 2025 10:58:55,684 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SINK, name: fileSink. sink.stop.time == 1739159935683
+10 Feb 2025 10:58:55,684 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.complete == 0
+10 Feb 2025 10:58:55,685 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.empty == 0
+10 Feb 2025 10:58:55,685 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.underflow == 0
+10 Feb 2025 10:58:55,685 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.channel.read.fail == 0
+10 Feb 2025 10:58:55,685 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.closed.count == 0
+10 Feb 2025 10:58:55,685 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.creation.count == 0
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.failed.count == 3
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.drain.attempt == 0
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.drain.sucess == 0
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.write.fail == 0
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.sink.RollingFileSink.stop:268)  - RollingFile sink fileSink stopped. Event metrics: SINK:fileSink{sink.batch.underflow=0, sink.event.write.fail=0, sink.connection.failed.count=3, sink.channel.read.fail=0, sink.connection.closed.count=0, sink.event.drain.attempt=0, sink.batch.complete=0, sink.event.drain.sucess=0, sink.connection.creation.count=0, sink.batch.empty=0}
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:164)  - Stopping Channel memChannel
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: org.apache.flume.channel.MemoryChannel{name: memChannel}
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: CHANNEL, name: memChannel stopped
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.start.time == 1739159923872
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.stop.time == 1739159935686
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.capacity == 100
+10 Feb 2025 10:58:55,686 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.current.size == 0
+10 Feb 2025 10:58:55,687 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.attempt == 0
+10 Feb 2025 10:58:55,687 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.success == 0
+10 Feb 2025 10:58:55,687 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.attempt == 0
+10 Feb 2025 10:58:55,687 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.success == 0
+10 Feb 2025 10:58:55,687 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 28
+10 Feb 2025 10:59:59,208 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:59:59,211 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:1117)  - Added sinks: fileSink Agent: agent2
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:dirSrc
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:59:59,212 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:59:59,213 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:fileSink
+10 Feb 2025 10:59:59,213 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:memChannel
+10 Feb 2025 10:59:59,213 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateConfigFilterSet:623)  - Agent configuration for 'agent2' has no configfilters.
+10 Feb 2025 10:59:59,226 INFO  [main] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:163)  - Post-validation flume configuration contains configuration for agents: [agent2]
+10 Feb 2025 10:59:59,227 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:154)  - Creating channels
+10 Feb 2025 10:59:59,231 INFO  [main] (org.apache.flume.channel.DefaultChannelFactory.create:42)  - Creating instance of channel memChannel type memory
+10 Feb 2025 10:59:59,244 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:208)  - Created channel memChannel
+10 Feb 2025 10:59:59,245 INFO  [main] (org.apache.flume.source.DefaultSourceFactory.create:41)  - Creating instance of source dirSrc, type spoolDir
+10 Feb 2025 10:59:59,250 INFO  [main] (org.apache.flume.sink.DefaultSinkFactory.create:42)  - Creating instance of sink: fileSink, type: file_roll
+10 Feb 2025 10:59:59,253 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:123)  - Channel memChannel connected to [dirSrc, fileSink]
+10 Feb 2025 10:59:59,253 INFO  [main] (org.apache.flume.node.Application.initializeAllComponents:177)  - Initializing components
+10 Feb 2025 10:59:59,254 INFO  [main] (org.apache.flume.node.Application.startAllComponents:207)  - Starting new configuration:{ sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{fileSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{} } }} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 10:59:59,255 INFO  [main] (org.apache.flume.node.Application.startAllComponents:214)  - Starting Channel memChannel
+10 Feb 2025 10:59:59,256 INFO  [main] (org.apache.flume.node.Application.startAllComponents:229)  - Waiting for channel: memChannel to start. Sleeping for 500 ms
+10 Feb 2025 10:59:59,258 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: CHANNEL, name: memChannel: Successfully registered new MBean.
+10 Feb 2025 10:59:59,258 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: CHANNEL, name: memChannel started
+10 Feb 2025 10:59:59,757 INFO  [main] (org.apache.flume.node.Application.startAllComponents:241)  - Starting Sink fileSink
+10 Feb 2025 10:59:59,758 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:111)  - Starting org.apache.flume.sink.RollingFileSink{name:fileSink, channel:memChannel}...
+10 Feb 2025 10:59:59,759 INFO  [main] (org.apache.flume.node.Application.startAllComponents:252)  - Starting Source dirSrc
+10 Feb 2025 10:59:59,759 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SINK, name: fileSink: Successfully registered new MBean.
+10 Feb 2025 10:59:59,760 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.source.SpoolDirectorySource.start:85)  - SpoolDirectorySource source starting with directory: /home/hadoop/Flume/TransferSpool/spool
+10 Feb 2025 10:59:59,760 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SINK, name: fileSink started
+10 Feb 2025 10:59:59,762 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:141)  - RollInterval is not valid, file rolling will not happen.
+10 Feb 2025 10:59:59,762 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.sink.RollingFileSink.start:143)  - RollingFileSink fileSink started.
+10 Feb 2025 10:59:59,780 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SOURCE, name: dirSrc: Successfully registered new MBean.
+10 Feb 2025 10:59:59,781 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SOURCE, name: dirSrc started
+10 Feb 2025 11:01:08,021 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.readEvents:407)  - Last read took us just up to a file boundary. Rolling to the next file, if there is one.
+10 Feb 2025 11:01:08,021 INFO  [pool-4-thread-1] (org.apache.flume.client.avro.ReliableSpoolingFileEventReader.rollCurrentFile:520)  - Preparing to move file /home/hadoop/Flume/TransferSpool/spool/data.txt to /home/hadoop/Flume/TransferSpool/spool/data.txt.COMPLETED
+10 Feb 2025 11:01:28,067 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:140)  - Shutting down configuration: { sourceRunners:{dirSrc=EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }} sinkRunners:{fileSink=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{runner.backoffs.consecutive=12, runner.backoffs=12} } }} channels:{memChannel=org.apache.flume.channel.MemoryChannel{name: memChannel}} }
+10 Feb 2025 11:01:28,067 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:144)  - Stopping Source dirSrc
+10 Feb 2025 11:01:28,068 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: EventDrivenSourceRunner: { source:Spool Directory source dirSrc: { spoolDir: /home/hadoop/Flume/TransferSpool/spool } }
+10 Feb 2025 11:01:28,069 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SOURCE, name: dirSrc stopped
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.start.time == 1739159999781
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SOURCE, name: dirSrc. source.stop.time == 1739160088069
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.accepted == 1
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append-batch.received == 1
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.accepted == 0
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.append.received == 0
+10 Feb 2025 11:01:28,070 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.channel.write.fail == 0
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.event.read.fail == 0
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.accepted == 2
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.events.received == 2
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.generic.processing.fail == 0
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: dirSrc. src.open-connection.count == 0
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.source.SpoolDirectorySource.stop:138)  - SpoolDir source dirSrc stopped. Metrics: SOURCE:dirSrc{src.events.accepted=2, src.open-connection.count=0, src.append.received=0, src.channel.write.fail=0, src.append-batch.received=1, src.generic.processing.fail=0, src.append-batch.accepted=1, src.append.accepted=0, src.events.received=2, src.event.read.fail=0}
+10 Feb 2025 11:01:28,071 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:154)  - Stopping Sink fileSink
+10 Feb 2025 11:01:28,072 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@f74e835 counterGroup:{ name:null counters:{runner.backoffs.consecutive=12, runner.backoffs=12} } }
+10 Feb 2025 11:01:28,072 INFO  [agent-shutdown-hook] (org.apache.flume.sink.RollingFileSink.stop:236)  - RollingFile sink fileSink stopping...
+10 Feb 2025 11:01:28,072 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SINK, name: fileSink stopped
+10 Feb 2025 11:01:28,073 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SINK, name: fileSink. sink.start.time == 1739159999760
+10 Feb 2025 11:01:28,073 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SINK, name: fileSink. sink.stop.time == 1739160088072
+10 Feb 2025 11:01:28,073 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.complete == 0
+10 Feb 2025 11:01:28,073 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.empty == 0
+10 Feb 2025 11:01:28,073 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.batch.underflow == 0
+10 Feb 2025 11:01:28,074 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.channel.read.fail == 0
+10 Feb 2025 11:01:28,074 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.closed.count == 0
+10 Feb 2025 11:01:28,074 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.creation.count == 1
+10 Feb 2025 11:01:28,074 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.connection.failed.count == 0
+10 Feb 2025 11:01:28,074 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.drain.attempt == 2
+10 Feb 2025 11:01:28,075 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.drain.sucess == 2
+10 Feb 2025 11:01:28,075 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SINK, name: fileSink. sink.event.write.fail == 0
+10 Feb 2025 11:01:28,075 INFO  [agent-shutdown-hook] (org.apache.flume.sink.RollingFileSink.stop:268)  - RollingFile sink fileSink stopped. Event metrics: SINK:fileSink{sink.batch.underflow=0, sink.event.write.fail=0, sink.connection.failed.count=0, sink.channel.read.fail=0, sink.connection.closed.count=1, sink.event.drain.attempt=2, sink.batch.complete=0, sink.event.drain.sucess=2, sink.connection.creation.count=1, sink.batch.empty=0}
+10 Feb 2025 11:01:28,075 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:164)  - Stopping Channel memChannel
+10 Feb 2025 11:01:28,075 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: org.apache.flume.channel.MemoryChannel{name: memChannel}
+10 Feb 2025 11:01:28,076 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: CHANNEL, name: memChannel stopped
+10 Feb 2025 11:01:28,076 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.start.time == 1739159999258
+10 Feb 2025 11:01:28,076 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.stop.time == 1739160088076
+10 Feb 2025 11:01:28,076 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.capacity == 100
+10 Feb 2025 11:01:28,076 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.current.size == 0
+10 Feb 2025 11:01:28,077 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.attempt == 2
+10 Feb 2025 11:01:28,077 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.put.success == 2
+10 Feb 2025 11:01:28,077 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.attempt == 15
+10 Feb 2025 11:01:28,077 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: memChannel. channel.event.take.success == 2
+10 Feb 2025 11:01:28,077 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 28
